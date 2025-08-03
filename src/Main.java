@@ -18,8 +18,8 @@ public class Main {
 
         ShoppingCart cart = new ShoppingCart(items);
 
-        System.out.println("Общая сумма товаров без скидки: " + cart.getPriceWithoutSale());
-        System.out.println("Общая сумма товаров со скидкой: " + cart.getPriceWithSale());
-        System.out.println("Сумма всех вегетарианских продуктов без скидки: " + cart.getPriceIsVegetarianWithoutSale());
+        System.out.println("Общая сумма товаров без скидки: " + cart.getPriceWithoutDiscount());
+        System.out.println("Общая сумма товаров со скидкой: " + cart.getPriceWithDiscount());
+        System.out.println("Сумма всех вегетарианских продуктов без скидки: " + cart.getPriceIsVegetarianWithoutDiscount());
     }
 }

@@ -9,7 +9,7 @@ public class ShoppingCart {
         this.items = items;
     }
 
-    public double getPriceWithoutSale() {
+    public double getPriceWithoutDiscount() {
         double price = 0;
         for (Food item : items) {
             price += item.getAmount() * item.getPrice();
@@ -17,19 +17,16 @@ public class ShoppingCart {
         return price;
     }
 
-    public double getPriceWithSale() {
+    public double getPriceWithDiscount() {
         double price = 0;
         for (Food item : items) {
-            double discount = 0;
-            if (item instanceof Discountable) {
-                discount = ((Discountable) item).getDiscount();
-            }
+            double discount = ((Discountable) item).getDiscount();
             price += item.getAmount() * item.getPrice() * (100 - discount) / 100;
         }
         return price;
     }
 
-    public double getPriceIsVegetarianWithoutSale() {
+    public double getPriceIsVegetarianWithoutDiscount() {
         double price = 0;
         for (Food item : items) {
             if (item.isVegetarian()) {
